@@ -21,4 +21,4 @@ function GM:PlayerSpawn( ply )
 	
 	BaseClass.PlayerSpawn( self, ply )
 	
-end -- NORTH AMERICA 
+end
