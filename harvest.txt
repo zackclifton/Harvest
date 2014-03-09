@@ -1,0 +1,28 @@
+"harvest"
+{
+	"base"	"base"
+	"title"	"GMod Harvest"
+	"maps"	"^gmh_"
+	"menusystem"	"1"
+	"workshopid"	""
+	
+	"settings"
+	{
+		1
+		{
+			"name"	"sv_password"
+			"text"	"Password"
+			"help"	"Password for the server"
+			"type"	"text"
+			"default"	""
+		}
+		2
+		{
+			"name"	"sv_lan"
+			"text"	"Is the server local?"
+			"help"	"Check whether to make the server local or not"
+			"type"	"checkbox"
+			"default"	"0"
+		}
+	}
+}
