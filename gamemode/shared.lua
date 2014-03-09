@@ -1,7 +1,7 @@
 GM.Name = "GMod Harvest"
-GM.Author = "N/A"
-GM.Email = "N/A"
-GM.Website = "N/A"
+GM.Author = "Zack Clifton"
+GM.Email = "bootybutts@gmail.butt"
+GM.Website = "http://www.meatspin.com/"
 
 DeriveGamemode( "sandbox" )
 
