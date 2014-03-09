@@ -14,6 +14,7 @@ function PLAYER:SetupDataTables()
 
 	BaseClass.SetupDataTables( self )
 	self.Player:NetworkVar( "Int", 0, "Cash" )
+	self.Player:NetworkVar( "Int", 1, "Stamina" )
 	
 end
 
@@ -30,6 +31,7 @@ function PLAYER:Spawn()
 
 	BaseClass.Spawn( self )
 	self.Player:SetCash(self.Player:GetCash() + 1)
+	self.Player:SetStamina(100)
 
 end
 
