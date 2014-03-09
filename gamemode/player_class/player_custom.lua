@@ -13,7 +13,7 @@ PLAYER.RunSpeed				= 300
 function PLAYER:SetupDataTables()
 
 	BaseClass.SetupDataTables( self )
-	self:NetworkVar( "Int", 0, "Cash" );
+	self.Player:NetworkVar( "Int", 0, "Cash" )
 	
 end
 
@@ -29,7 +29,7 @@ end
 function PLAYER:Spawn()
 
 	BaseClass.Spawn( self )
-	print(self:GetCash())
+	self.Player:SetCash(self.Player:GetCash() + 1)
 
 end
 
