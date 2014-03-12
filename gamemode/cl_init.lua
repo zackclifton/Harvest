@@ -40,3 +40,9 @@ function GM:HUDPaint()
 		draw.DrawText( stam, "Harvest", ScrW() * 0.05, ScrH() * 0.11, Color( 255, 255, 255, 255), TEXT_ALIGN_LEFT )
 	end
 end
+
+function GetMoney()
+	net.Receive("PlayerInfo", function(len)
+		LocalPlayer():GetTable().Money = net.ReadInt(32)
+	end)
+end

@@ -8,7 +8,8 @@ local PLAYER = {}
 -- See gamemodes/base/player_class/player_default.lua for all overridable variables
 --
 PLAYER.WalkSpeed 			= 200
-PLAYER.RunSpeed				= 300
+PLAYER.RunSpeed				= 500
+PLAYER.Money = 5
 
 function PLAYER:SetupDataTables()
 
@@ -21,9 +22,8 @@ end
 function PLAYER:Loadout()
 
 	self.Player:RemoveAllAmmo()
-	
-	self.Player:GiveAmmo( 256,	"Pistol", 		true )
-	self.Player:Give( "weapon_pistol" )
+	self.Player:Give( "tool_hoe" )
+	self.Player:Give( "weapon_physgun" )
 
 end
 
@@ -31,8 +31,11 @@ function PLAYER:Spawn()
 
 	BaseClass.Spawn( self )
 	self.Player:SetCash(self.Player:GetCash() + 1)
+	self.Money = self.Money + 1
 	self.Player:SetStamina(100)
 
+	print(self.Money)
+	
 end
 
 player_manager.RegisterClass( "player_custom", PLAYER, "player_default" )

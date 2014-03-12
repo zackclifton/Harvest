@@ -36,7 +36,6 @@ function SWEP:PrimaryAttack()
 	-- the rate of fire. Here we set it to shoot every 0.5 seconds.
 	self.Weapon:SetNextPrimaryFire( CurTime() + 0.2	)	
 
-	-- Call 'ThrowChair' on self with this model
 	self:TillDirt( "models/props_junk/wood_pallet001a.mdl" )
 	self:EmitSound( ShootSound )
 
@@ -45,7 +44,7 @@ end
 function SWEP:TillDirt( model_file )
 	if ( CLIENT ) then return end
 	
-	local ent = ents.Create( "prop_physics" )
+	local ent = ents.Create( "gmh_tilleddirt" )
 	if ( !IsValid( ent ) ) then return end
 	
 	ent:SetModel( model_file )
