@@ -2,12 +2,14 @@ AddCSLuaFile( "cl_init.lua" )
 AddCSLuaFile( "shared.lua" )
 
 include( "shared.lua" )
+include( "player_class/player_custom.lua" )
 
 DEFINE_BASECLASS( "gamemode_base" )
 
 function GM:PlayerNoClip( ply, desiredState )
-	
-	print(ply.Money)
+
+	ply:AddMoney(1)
+	print(ply:GetMoney())
 	
 	if (desiredState == false) then
 		return true

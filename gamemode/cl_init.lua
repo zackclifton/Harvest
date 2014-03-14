@@ -1,4 +1,5 @@
 include( "shared.lua" )
+include( "player_class/player_custom.lua" )
 
 -- Define our own font!
 surface.CreateFont( "Harvest", {
@@ -29,8 +30,8 @@ function GM:HUDPaint()
 	client = client or LocalPlayer() -- Store the owner of the HUD into the "client" variable
 	if (client:Alive()) then
 		local health = string.format( "Health: %i", client:Health()) -- Collect health data from the owner of the HUD
-		local cash = string.format( "Cash?: %i", client:GetCash()) -- Collect cash data from the owner of the HUD (Currently doesn't actually track cash)
-		local stam = string.format( "Stamina: %i", client:GetStamina()) -- Collect stamina data from the owner of the HUD (Currently doesn't track stamina)
+		local cash = string.format( "Cash?: %i", client:GetMoney()) -- Collect cash data from the owner of the HUD (Currently doesn't actually track cash)
+		local stam = string.format( "Stamina: %i", client:GetMoney()) -- Collect stamina data from the owner of the HUD (Currently doesn't track stamina)
 		if ( client:Health() > 30 ) then -- Draw the health text in red if it's at or below 30, otherwise draw it in white
 			draw.DrawText( health, "Harvest", ScrW() * 0.05, ScrH() * 0.05, Color( 255,255,255,255 ), TEXT_ALIGN_LEFT )
 		else
@@ -41,8 +42,8 @@ function GM:HUDPaint()
 	end
 end
 
-function GetMoney()
+--[[function GetMoney()
 	net.Receive("PlayerInfo", function(len)
 		LocalPlayer():GetTable().Money = net.ReadInt(32)
 	end)
-end
+end]]--
